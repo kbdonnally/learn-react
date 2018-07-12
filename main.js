@@ -1,4 +1,5 @@
 /* FreeCodeCamp React Tutorial */
+(function() {
 
 /* ---------------- Step 1: Hello World ---------------- */
 
@@ -66,3 +67,4 @@ var render = () => {
 };
 
 setInterval(render, 1000);
+})();
