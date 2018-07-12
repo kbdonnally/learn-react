@@ -28,10 +28,35 @@ ReactDOM.render(
 
 /* ----------------- Step 2: User Input ---------------- */
 
+/* NB: overwriting old code */
+
 // vanilla
 jsContainer.innerHTML = `
 <div class="js__demo">
 	Hello! Enter text plz.
 	<input type="text" placeholder="Vanilla JS" aria-label="User input field for Vanilla JavaScript example" />
+	<p>${new Date()}</p>
 </div>
 `;
+
+// React
+ReactDOM.render(
+	React.createElement(
+		'div',
+		{ className: 'react__demo' },
+		'Hi ur in React now',
+		React.createElement(
+			'input',
+			{
+				type: 'text',
+				placeholder: 'REACT TO MEEEEE'
+			}
+		),
+		React.createElement(
+			'p',
+			null,
+			new Date().toString()
+		)
+	),
+	reactContainer
+);
