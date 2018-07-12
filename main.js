@@ -30,33 +30,39 @@ ReactDOM.render(
 
 /* NB: overwriting old code */
 
-// vanilla
-jsContainer.innerHTML = `
-<div class="js__demo">
-	Hello! Enter text plz.
-	<input type="text" placeholder="Vanilla JS" aria-label="User input field for Vanilla JavaScript example" />
-	<p>${new Date()}</p>
-</div>
-`;
+/* ----------------- Step 3: Wrap in fxn --------------- */
 
-// React
-ReactDOM.render(
-	React.createElement(
-		'div',
-		{ className: 'react__demo' },
-		'Hi ur in React now',
+var render = () => {
+	// vanilla
+	jsContainer.innerHTML = `
+	<div class="js__demo">
+		Hello! Enter text plz.
+		<input type="text" placeholder="Vanilla JS" aria-label="User input field for Vanilla JavaScript example" />
+		<p>${new Date()}</p>
+	</div>
+	`;
+
+	// React
+	ReactDOM.render(
 		React.createElement(
-			'input',
-			{
-				type: 'text',
-				placeholder: 'REACT TO MEEEEE'
-			}
+			'div',
+			{ className: 'react__demo' },
+			'Hi ur in React now',
+			React.createElement(
+				'input',
+				{
+					type: 'text',
+					placeholder: 'REACT TO MEEEEE'
+				}
+			),
+			React.createElement(
+				'p',
+				null,
+				new Date().toString()
+			)
 		),
-		React.createElement(
-			'p',
-			null,
-			new Date().toString()
-		)
-	),
-	reactContainer
-);
+		reactContainer
+	);
+};
+
+setInterval(render, 1000);
