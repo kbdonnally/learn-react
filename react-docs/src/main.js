@@ -6,7 +6,7 @@
 
 // function
 const formatName = user => { 
-	user.firstName + ' ' + user.lastName
+	return user.firstName + ' ' + user.lastName
 };
 
 // input object
@@ -17,7 +17,7 @@ const user = {
 
 // JSX w/ embedded expression
 const greeting = (
-	<h1>
+	<h1 className='react__demo'>
 	Hello, {formatName(user)}!
 	</h1>
 );
