@@ -9,3 +9,5 @@
 
 - [React's official tutorial](https://reactjs.org/tutorial/tutorial.html) to learn "real" syntax, use a local server, and create useful functionality.
 	- By "real" syntax I mean the syntactic sugar on top of the React/ReactDOM methods we used in the FCC tutorial.
+
+- React's docs are also useful and the folder with that title has code snippets etc. that I'm using to test out some of their examples
