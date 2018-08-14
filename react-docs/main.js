@@ -108,5 +108,55 @@ if (document.querySelector('.section-one')) {
 	ReactDOM.render(React.createElement(App, null), document.getElementById('not-root'));
 }
 if (document.querySelector('.section-two')) {
-	// do stuff
+
+	/* ---------- 1. CLASS-BASED COMPONENT ----------- */
+
+	// ES6 subclass definition
+	class Clock extends React.Component {
+		constructor(props) {
+			super(props);
+			this.state = { date: new Date() };
+		}
+
+		// lifecycle methods
+		componentDidMount() {
+			this.timerID = setInterval(() => this.tick(), 1000);
+		}
+
+		componentWillUnmount() {
+			clearInterval(this.timerID);
+		}
+
+		// timer
+		tick() {
+			this.setState({
+				date: new Date()
+			});
+		}
+
+		// UI info
+		render() {
+			return React.createElement(
+				'div',
+				null,
+				React.createElement(
+					'h1',
+					null,
+					'Hi, hello'
+				),
+				React.createElement(
+					'h3',
+					null,
+					'What time is it? PARTY TI-',
+					React.createElement('br', null),
+					'... no wait it\'s ',
+					this.state.date.toLocaleTimeString()
+				)
+			);
+		}
+	} // end class
+
+	// render onscreen
+	ReactDOM.render(React.createElement(Clock, null), document.getElementById('root'));
 }
+/* end of section */
