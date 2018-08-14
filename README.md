@@ -54,3 +54,12 @@ npx babel src -o main.js
 ### Result
 
 - If you run the command above, you should be able to load your plain HTML file in Chrome and successfully load React components. Excellent :)
+
+
+## File Structure
+
+- Just kinda expanding to new files when first one is getting contents overwritten too much or I can no longer easily navigate the JS document
+
+- Babel auto-concatenates JS if fed a directory, so leaving them all in `src/` together doesn't affect the final, compiled file (which is still `main.js`)
+
+- This corresponds to no actual section in the tutorial solely Katherine's mind
