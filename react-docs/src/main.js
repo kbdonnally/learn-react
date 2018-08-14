@@ -27,4 +27,21 @@ ReactDOM.render(
 	document.getElementById('root')
 );
 
+/* ------------- 2. USING W/ FUNCTIONS ------------- */
+
+// conditionals
+function getGreeting(user) {
+	if (user.lastName == 'Gorka') {
+		return <h1>You are a Nazi, {user.firstName} {user.lastName}.</h1>;
+	}
+	else {
+		return <h1>Heeeyyyyyy {formatName(user)}</h1>;
+	}
+}
+
+ReactDOM.render(
+	getGreeting(user),
+	document.getElementById('root')
+);
+
 })();
